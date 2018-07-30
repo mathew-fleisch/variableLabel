@@ -23,8 +23,8 @@ var stringMatches = [
 ]
 
 // Example hashes
-console.log(`base64: ${base64.encode('this is a test')}`)
-console.log(`sha256: ${sha256('this is another test')}`)
+console.log(`base64.encode('this is a test'): ${base64.encode('this is a test')}`)
+console.log(`sha256('this is another test'): ${sha256('this is another test')}`)
 
 // Compare strings
 for (var i = 0; i < stringMatches.length; i++) {
@@ -35,7 +35,7 @@ for (var i = 0; i < stringMatches.length; i++) {
 function compareString(compare, thatString) {
   console.log(`${thatString} ?== ${compare}`)
   if (compare === thatString) {
-    return 'they are the same!'
+    return 'MATCH FOUND!!!'
   } else {
     return 'no match found'
   }
