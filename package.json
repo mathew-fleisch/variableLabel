@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "base-64": "^0.1.0",
-    "js-crc": "^0.2.0"
+    "js-crc": "^0.2.0",
+    "sha256": "^0.2.0"
   },
   "devDependencies": {},
   "scripts": {
