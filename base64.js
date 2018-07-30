@@ -16,7 +16,9 @@ const compare = 'BE3663BE6AF17EF57B2671E7C73069076151A5F72923E85CC5E34CD68A443E2
 
 // Failed attempts
 var stringMatches = [
+  sha256('file=/www/new-agents/roster.txt'),
   sha256(base64.encode('file=/www/new-agents/roster.txt')),
+  sha256('/www/new-agents/roster.txt'),
   sha256(base64.encode('/www/new-agents/roster.txt')),
   sha256('roster.txt'),
   sha256(base64.encode('roster.txt'))
@@ -35,7 +37,7 @@ for (var i = 0; i < stringMatches.length; i++) {
 function compareString(compare, thatString) {
   console.log(`${thatString} ?== ${compare}`)
   if (compare === thatString) {
-    return 'MATCH FOUND!!!'
+    return ' ^^^  MATCH FOUND!!!  ^^^ '
   } else {
     return 'no match found'
   }
