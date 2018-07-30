@@ -13,7 +13,7 @@ const compare = 'BE3663BE6AF17EF57B2671E7C73069076151A5F72923E85CC5E34CD68A443E2
 
 const compareFile = '/www/new-agents/roster.txt'
 const compareQuery = `file=${compareFile}`
-const hr = '-'.repeat(100)
+const hr = '-'.repeat(80)
 
 // Failed attempts
 var stringMatches = [
@@ -22,8 +22,6 @@ var stringMatches = [
   sha256(compareFile),
   sha256(base64.encode(compareFile))
 ]
-
-console.log(hr)
 
 // Example hashes
 console.log(`base64.encode('this is a test'): ${base64.encode('this is a test')}`)
@@ -36,12 +34,13 @@ for (var i = 0; i < stringMatches.length; i++) {
   console.log(`Compare: ${compareString(compare, stringMatches[i].toUpperCase())}`)
   console.log(hr)
 }
-console.log(hr)
 
 console.log(`Sanity Check: ${compareString(compare, compare.toUpperCase())}`)
 
 function compareString(compare, thatString) {
-  console.log(`${thatString} ?== ${compare}`)
+  console.log('Comparing:')
+  console.log(thatString)
+  console.log(compare)
   if (compare === thatString) {
     return ' ^^^  MATCH FOUND!!!  ^^^ '
   } else {
