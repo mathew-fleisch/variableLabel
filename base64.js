@@ -17,12 +17,12 @@ const goal = '/www/private/.htpasswd'
 const hr = '-'.repeat(80)
 
 // Failed attempts
-var stringMatches = {
-  'sha256(compareQuery)': sha256(compareQuery).toUpperCase(),
-  'sha256(base64.encode(compareQuery))': sha256(base64.encode(compareQuery)).toUpperCase(),
-  'sha256(compareFile)': sha256(compareFile).toUpperCase(),
-  'sha256(base64.encode(compareFile))': sha256(base64.encode(compareFile)).toUpperCase()
-}
+var stringMatches = [
+  sha256(compareQuery).toUpperCase(),
+  sha256(base64.encode(compareQuery)).toUpperCase(),
+  sha256(compareFile).toUpperCase(),
+  sha256(base64.encode(compareFile)).toUpperCase()
+]
 
 // Example hashes
 console.log(`base64.encode('this is a test'): ${base64.encode('this is a test')}`)
@@ -37,7 +37,7 @@ console.log(`compareQuery: ${compareQuery}`)
 console.log(hr)
 
 // Display possible matches
-console.log(JSON.stringify(stringMatches, null, 2))
+console.log(`stringMatches: ${JSON.stringify(stringMatches, null, 2)}`)
 
 console.log(hr)
 
